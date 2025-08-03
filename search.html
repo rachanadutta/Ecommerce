@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD Store</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link href="./output.css" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+</head>
+<body class="bg-white font-jost flex flex-col min-h-screen m-0 p-0 ">
+   
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center bg-black shadow-md  min-w-full  p-4 " style="box-shadow:0 0 30px rgba(6, 201, 9, 0.5);">
+<!-- brand name -->
+        <div id="brand_name" class="cursor-pointer md:w-[20%]">
+            <h1 class="mb-0 text-lg ml-5 font-bold md:font-bold md:text-4xl text-white md:mb-3 ">RD Store</h1>
+        </div>
+<!-- search -->
+        <div class=" relative w-[100%] md:w-[40%] flex items-center ml-7" id="search_bar">
+            
+            <input id="search_input" class="bg-white rounded-l-xl px-4 md:p-4 w-full h-10 placeholder:text-gray-600 placeholder:text-sm outline-none focus:outline-none" type="text" placeholder="Search for products...">
+
+            <button id="clear_search" class="right-10 h-10 cursor-pointer px-2 bg-white  text-gray-400 hover:text-black  text-xl"><i class="ri-close-line"></i></button>
+            <button id="search_button" class="bg-white h-10  hover:bg-gray-600 cursor-pointer px-4 rounded-r-xl md:px-4 text-xl hover:text-white" type="submit"><i class="ri-search-line"></i></button>
+            
+            
+        </div>
+<!-- wishlist, cart, profile -->
+        
+        <div class="w-[30%] flex justify-end items-center gap-2">
+        <div id="home" class="hidden md:text-white text-3xl md:flex justify-center cursor-pointer hover:bg-gray-100 hover:text-black hover:rounded-2xl py-2 px-3 "><i  class="ri-home-4-line"></i></div>
+        <div id="wishlist_nav" class="hidden md:text-white text-3xl md:flex justify-center cursor-pointer hover:bg-gray-100 hover:text-black hover:rounded-2xl py-2 px-3 ">
+            <i class="ri-heart-line"></i>
+        </div>
+        <div id="cart_bar" class="text-white py-2 px-3 md:flex justify-center  md:text-3xl  hover:bg-gray-100 hover:text-black  hover:rounded-2xl cursor-pointer hidden">
+            <i class="ri-shopping-cart-line"></i>
+        </div>
+        <div id="profile" class="hidden md:text-white text-3xl md:flex justify-center cursor-pointer hover:bg-gray-100 hover:text-black hover:rounded-2xl py-2 px-3 ">
+            <i class="ri-account-circle-line"></i>
+        </div>
+        </div>
+<!-- menu -->
+        <div id="menu_bar" class="w-[10%] text-white py-2 px-3 flex justify-end  text-2xl   hover:bg-gray-100 hover:text-black hover:rounded-2xl cursor-pointer md:hidden">
+           <i class="ri-menu-line"></i>
+        </div>
+        
+    </nav>
+<!-- sidebar -->
+    <div id="sidebar" class="md:hidden fixed top-0 right-0  translate-x-full bg-gray-950 text-white h-full w-full transition-transform duration-300 ease-in-out z-50">
+        <div id="close_btn" class=" p-4 cursor-pointer text-2xl flex justify-end">
+            <div class="p-2 hover:bg-gray-600  hover:rounded-2xl">
+            <i class="ri-close-line"></i>
+            </div>
+        </div>
+        <div class=" text-white text-lg  ">
+            <ul class="list-none">
+        <li class="mb-5 "><a class="block hover:bg-gray-300 hover:text-black p-4" href="index.html">Home</a></li>
+        <li class="mb-5"><a  class="block  hover:bg-gray-300 hover:text-black p-4" href="wishlist.html">wishlist</a></li>
+        <li class="mb-5"><a id="cart_sidebar" class="block hover:bg-gray-300 hover:text-black p-4" href="#cart">Cart</a></li>
+        <li  class="mb-5"><a id="info" class="block hover:bg-gray-300 hover:text-black p-4" href="#contact">Contact</a></li>
+        <li  class="mb-5"><a id="login" class="block hover:bg-gray-300 hover:text-black p-4" href="login.html">Login</a></li>
+
+        </ul>
+
+        </div>
+
+    </div>
+    <div id="wrapper" class="flex-1 pt-20">
+        <!-- <div id="banner" class="w-full h-30 flex justify-center items-center text-3xl   lg:text-4xl p-5"><h1>Welcome to the shopping heaven!</h1></div> -->
+<!-- product container -->
+    <div id="product" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4 mt-0 cursor-pointer">
+    </div>
+    </div>
+    <div id="contact" class="bg-gray-800 text-white p-4 w-full ">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Ecommerce Website. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#" class="text-blue-400">Facebook</a>,
+                <a href="#" class="text-blue-400">Twitter</a>,
+                <a href="#" class="text-blue-400">Instagram</a>
+            </p>
+
+            <p>Email: shopping@gmail.com</p>
+            <p>+91 6449238294</p>
+        </div>
+<!-- add to Cart -->
+<div id="cart" class="fixed top-0 right-0  translate-x-full bg-white h-full w-full md:w-1/4 transition-transform duration-300 ease-in-out z-50 ">
+    <div class="flex justify-between">
+     <h1 class="text-3xl m-4 p-2 text-black">Shopping Cart</h1>
+    <div id="close_cart" class="text-black p-4 cursor-pointer text-2xl flex justify-end">
+       
+            <div class=" p-2 hover:bg-gray-600  hover:rounded-2xl hover:text-white">
+            <i class="ri-close-fill"></i>
+            </div>
+        </div>
+        </div>
+        <div id="items"></div>
+        <div id="cart_bottom" class="fixed bottom-0 right-0 w-full h-1/6">
+            <div id="subtotal" class=" flex justify-center w-full h-1/2 bg-gray-400 border-2 text-black border-gray-400 text-center items-center text-2xl"></div>
+            <div id="checkout" class="w-full h-1/2 bg-black flex justify-center items-center text-center text-2xl hover:bg-gray-800 cursor-pointer">
+                <a href="#">Proceed to checkout</a>
+            </div>
+        </div>
+</div>
+
+
+        <script src="script.js"></script>
+</body>
+</html>
