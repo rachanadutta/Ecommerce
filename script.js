@@ -214,7 +214,7 @@ window.addEventListener("storage", (event) => {
 // ----------- DOM READY: Load Based on Page -----------
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (path.includes("/index.html") || path === "/" || path.includes("/Shopping/index.html") || path === "/Shopping/" || path === "/RD Store/") {
+    if (path.includes("/index.html") || path === "/" || path.includes("/Shopping/index.html") || path === "/Shopping/" || path === "/Ecommerce/") {
         renderProducts();
         renderCart();
         setTimeout(() => {
