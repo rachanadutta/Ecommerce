@@ -81,16 +81,16 @@ function renderSearchResults(query) {
         card.className = "bg-white shadow-amber-lg rounded-lg border-gray-300 shadow-sm border";
         card.innerHTML = `
         <img src="${product.image}" alt="Product Image" class="w-full h-70 object-cover rounded-t-lg shadow-lg">
-        <div class="flex justify-between items-center p-4">
+        <div class="flex flex-wrap justify-between items-center p-4">
             <div>
                 <h2 class="text-xl font-semibold mt-2 px-4">${product.name}</h2>
                 <p class="text-gray-600 px-4">Rs.${product.price}</p>
             </div>
-            <div class="flex items-center gap-2 mt-2">
+            <div class="flex flex-wrap items-center gap-2 mt-2 ">
                 <button class="wishlist_btn cursor-pointer px-4 py-2 hover:bg-pink-200 hover:rounded-lg" data-id="${product.id}">
                     <i class="ri-heart-line"></i>
                 </button>
-                <button class="addtocart_btn cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-3 " data-id="${product.id}">
+                <button class="addtocart_btn cursor-pointer overflow-x-hidden bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-3 " data-id="${product.id}">
                     <i id="cart_icon" class="ri-shopping-cart-line"></i>
                 </button>
             </div>
@@ -170,9 +170,10 @@ function renderWishlist() {
             <h2 class="text-xl font-semibold mt-2 px-4">${product.name}</h2>
             <p class="text-gray-600 px-4">Rs.${product.price}</p>
         </div>
-        <div class="flex items-center gap-2 mt-2 m-4">
-            <button  class="wishlist_cart cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-3" data-id="${product.id}"><i id="cart_icon" class="ri-shopping-cart-line"></i></button>
-            <button class="remove_btn cursor-pointer m-2 bg-gray-400 px-4 py-2 rounded hover:bg-gray-600 hover:text-white" data-id="${product.id}">Remove</button>
+        <div class="flex items-center lg:gap-2 gap-1 mt-2 m-4">
+            <button  class="wishlist_cart cursor-pointer bg-blue-500 text-white lg:px-4 py-2 px-2 rounded hover:bg-blue-600 mr-3" data-id="${product.id}"><i id="cart_icon" class="ri-shopping-cart-line"></i></button>
+            <button class="remove_btn cursor-pointer text-sm lg:text-xl
+         lg:m-2 m-1 bg-gray-400 lg:px-4 py-2 px-2 py-2 rounded hover:bg-gray-600 hover:text-white" data-id="${product.id}">Remove</button>
         </div>`;
         card.addEventListener("click", (e) => {
             if (e.target.closest("button")) return;
@@ -233,7 +234,13 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartListener();
      // optional if needed on product page
 }
-
+document.addEventListener("click", (event) => {
+    const brandName = event.target.closest("#brand_name");
+    if (brandName) {
+        
+        window.location.href = "index.html";
+    }
+})
 
  document.addEventListener("click", (event) => {
   const home = event.target.closest("#home");
