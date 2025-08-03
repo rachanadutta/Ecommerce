@@ -232,12 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartListener();
      // optional if needed on product page
 }
-document.addEventListener("click", (event) => {
-    const brandName = event.target.closest("#brand_name");
-    if (brandName) {
-    window.location.href = "index.html";
-    }
-})
 
 
  document.addEventListener("click", (event) => {
